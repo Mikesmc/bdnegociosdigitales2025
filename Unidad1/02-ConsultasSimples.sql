@@ -2,6 +2,7 @@
 -- Consultas Simples
 use Northwind;
 
+
 -- Mostrar todos los clientes de la empresa, con todas las columnas de datos de la empresa
 --(clientes, proveedores, categorias, productos, ordenes, detalle de la orden, empleados)
 
@@ -51,9 +52,15 @@ MONTH(orderdate)as 'Mes',
 day(orderdate) as 'Dia de la orden',
 CustomerID, EmployeeID from Orders;
 
+-- Filas duplicadas(Distinct)
+
+-- Mostrar los paises en donde se tienen clientes mostrando solo el pais
+
+select distinct Country as Pais from Customers
+order by Country;
 
 --Clausula where
--- operadores relacionales (<,>,=,<=,>=,!= o <>)
+-- operadores relacionales o test de comparacion (<,>,=,<=,>=,!= o <>)
 select * from Customers;
 
 --Selecionar el cliente BOLID
@@ -101,3 +108,32 @@ ShippedDate as FechaEnvio,
 CustomerID as AquienEntrego from Orders
 where year (OrderDate) = '1996';
 
+
+-- Mostrar todas las ordenes de compras donde la cantidad de productos comprados
+-- sea mayor a 5
+
+select Quantity from [Order Details]
+where Quantity >5;
+
+-- Mostrar el nombre de completo del empleto, su numero de empleado, fecha de nacimiento
+-- la ciudad y fecha de contratacion y esta debe de ser de aquellos que fueron contratados despues 
+-- de 1993, los resultados en su encabezados debes ser mostrados en español
+
+
+select FirstName as Nombre,
+EmployeeID as NumeroEmpleado,
+BirthDate as FechaNacimiento,
+City as Ciudad,
+HireDate as FechaContratacion from Employees
+where year (HireDate) >1993;
+
+
+-- Mostrar los empleados que no son dirigidores por el jefe 2
+
+select EmployeeID,ReportsTo from Employees
+where ReportsTo <> 2;
+
+-- Selecionar los empleados que no tengan jefes
+
+select * from Employees
+where ReportsTo is null
