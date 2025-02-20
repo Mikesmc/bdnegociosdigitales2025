@@ -1,3 +1,5 @@
+![Inner Join](../Img/img_inner_join.png)
+
 -- Seleccionar todas las categorias y productos
 
 
