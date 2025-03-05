@@ -406,3 +406,13 @@ group by c.CompanyName
 having sum(od.Quantity * od.UnitPrice) between 500 and 2000
 
 --Left join, Right join, Full join y Cross join
+
+--Practica de utilizacion de left join
+
+-- Seleccionar los datos que se van a utilizar para insertar
+-- en la tabla products_news
+
+--product_id, productname, customer, category, unitprice,
+--discontinued, inserted_date
+
+
