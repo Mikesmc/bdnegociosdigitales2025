@@ -1,3 +1,10 @@
+# Consultas Creacion de base de datos SQL
+
+
+``` SQL
+
+
+
 --Creacion de base de datos en SQL-Server
 -- EN construccion-- SQL-LDD 
 -- Crear base de datos bdentornosvip
@@ -38,3 +45,5 @@ CREATE TABLE tblProducto(
   foreign key(categoriaId)
   references tblcategoria(categoriaId)
 )
+
+```
